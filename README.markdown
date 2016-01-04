@@ -1,5 +1,7 @@
 # tmuxpair #
 
+[![Build Status](https://travis-ci.org/goerz/tmuxpair.svg)](https://travis-ci.org/goerz/tmuxpair)
+
 Command line script for setting up a temporary tmux session for pair programming
 
 Author: Michael Goerz <<goerz@stanford.edu>>
