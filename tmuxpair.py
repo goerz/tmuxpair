@@ -33,8 +33,8 @@ class AuthorizedKeys(object):
 
     def add_key_file(self, file, options=None):
         """Add the public key stored in the given file"""
-        key = sshkeys.PublicKey.read(file)
-        self.add_key(key, options=options)
+        key = sshkeys.Key.from_pubkey_file(file)
+        self.add_key(key)
 
     def extend(self, other):
         """Extend with keys and options of another AuthorizedKeys instance"""
