@@ -155,11 +155,14 @@ def handle_exit(callback=None, append=False):
         metavar='SESSION_NAME', help="Name of tmux session to use.")
 @click.option('--read-only', '-r', is_flag=True, default=False,
         help='Allow read-only access only for remote users.')
+@click.option('--tmux', default=sh.which('tmux'), metavar='TMUX',
+        type=click.Path(exists=True), show_default=True,
+        help='Executable to be used for tmux')
 @click.option('--debug', is_flag=True,
     help='enable debug logging')
 @click.argument('keys', nargs=-1, type=click.Path(exists=True, dir_okay=False),
         required=True)
-def main(authorized_keys, keys, session, read_only, debug):
+def main(authorized_keys, keys, session, read_only, tmux, debug):
     """Run a new tmux session, or attach to an existing tmux session, for pair
     programming.
 
@@ -180,9 +183,13 @@ def main(authorized_keys, keys, session, read_only, debug):
         logger.setLevel(logging.DEBUG)
         logger.debug("Enabled debug output")
 
-    tmux = sh.which('tmux')
-    if tmux is None:
-        raise FileNotFoundError("There is no tmux executable in your PATH")
+    try:
+        if tmux is None:
+            raise click.UsageError(message="Could not find 'tmux' executable. "
+                    "Please use --tmux option.")
+    except click.ClickException as e:
+        e.show()
+        sys.exit(e.exit_code)
     authorized_keys = os.path.expanduser(authorized_keys)
     authorized_keys_backup = authorized_keys+'.tmuxpair_bak'
     if os.path.isfile(authorized_keys_backup):
