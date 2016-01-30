@@ -14,7 +14,6 @@ from collections import OrderedDict
 from copy import copy
 
 import sshkeys
-import sh
 import click
 from click import echo
 
@@ -155,8 +154,7 @@ def handle_exit(callback=None, append=False):
         metavar='SESSION_NAME', help="Name of tmux session to use.")
 @click.option('--read-only', '-r', is_flag=True, default=False,
         help='Allow read-only access only for remote users.')
-@click.option('--tmux', default=sh.which('tmux'), metavar='TMUX',
-        type=click.Path(exists=True), show_default=True,
+@click.option('--tmux', default='tmux', metavar='TMUX', show_default=True,
         help='Executable to be used for tmux')
 @click.option('--debug', is_flag=True,
     help='enable debug logging')
@@ -183,13 +181,6 @@ def main(authorized_keys, keys, session, read_only, tmux, debug):
         logger.setLevel(logging.DEBUG)
         logger.debug("Enabled debug output")
 
-    try:
-        if tmux is None:
-            raise click.UsageError(message="Could not find 'tmux' executable. "
-                    "Please use --tmux option.")
-    except click.ClickException as e:
-        e.show()
-        sys.exit(e.exit_code)
     authorized_keys = os.path.expanduser(authorized_keys)
     authorized_keys_backup = authorized_keys+'.tmuxpair_bak'
     if os.path.isfile(authorized_keys_backup):

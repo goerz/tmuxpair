@@ -18,7 +18,7 @@ setuptools.setup(
     author_email="goerz@stanford.edu",
     description="Command line script for setting up a temporary tmux session for pair programming",
     install_requires=[
-        'Click>=5', 'sh>=1', 'sshkeys>=0.5',
+        'Click>=5', 'sshkeys>=0.5',
     ],
     extras_require={'dev': ['pytest', 'coverage', 'pytest-cov']},
     py_modules=['tmuxpair'],
