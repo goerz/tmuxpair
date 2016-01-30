@@ -188,7 +188,7 @@ def main(authorized_keys, keys, session, read_only, tmux, debug):
                    "either an instance of this script is already running, or "
                    "an earlier instance has crashed." % authorized_keys_backup,
                    err=True)
-        return(1)
+        sys.exit(1)
     shutil.copy(authorized_keys, authorized_keys_backup)
     def cleanup():
         click.echo("Cleaning up, restoring %s..." % authorized_keys)
@@ -225,5 +225,5 @@ def main(authorized_keys, keys, session, read_only, tmux, debug):
                                  stderr=sp.STDOUT)
             except sp.CalledProcessError as e:
                 click.echo("Error: Cannot start tmux: %s" % e.output, err=True)
-                return(1)
+                sys.exit(1)
 
