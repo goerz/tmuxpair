@@ -6,13 +6,10 @@ from multiprocessing import Process
 import subprocess
 import shutil
 import os
-import stat
 import time
 import signal
 import filecmp
-from unittest.mock import Mock
 import tmuxpair
-import click
 from click.testing import CliRunner
 import sshkeys
 import pytest
