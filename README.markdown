@@ -2,6 +2,9 @@
 
 [![Build Status](https://travis-ci.org/goerz/tmuxpair.svg)](https://travis-ci.org/goerz/tmuxpair)
 
+Command line script for setting up a temporary tmux session for pair
+programming.
+
 © 2016 by [Michael Goerz](http://michaelgoerz.net). This software is available
 under the terms of the [MIT license][LICENSE].
 
