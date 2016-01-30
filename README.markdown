@@ -1,38 +1,25 @@
-# tmuxpair #
+# tmuxpair – Reasonably Secure Pair Programming#
 
 [![Build Status](https://travis-ci.org/goerz/tmuxpair.svg)](https://travis-ci.org/goerz/tmuxpair)
 
+(c) 2016 by Michael Goerz <<goerz@stanford.edu>>. This software is available
+under the terms of the MIT license. See [LICENSE][] for details.
+
 Command line script for setting up a temporary tmux session for pair programming
 
-Author: Michael Goerz <<goerz@stanford.edu>>
+[LICENSE]: LICENSE
 
-Website: [Github][]
+## Installation & Usage ##
 
-[Github]: programming#tmuxpair
-
-
-## Installation ##
-
-It is strongly recommended that you use [virtualenv][]/[pipsi][]/[conda env][].
-Activate your environment, and then run
+Install the `tmuxpair` executable with
 
     pip install tmuxpair
 
-This will install `tmuxpair` in the environment's `bin` folder.
+Using [virtualenv][]/[pipsi][]/[conda env][] is recommended.
 
 [virtualenv]: http://docs.python-guide.org/en/latest/dev/virtualenvs/
 [pipsi]: https://github.com/mitsuhiko/pipsi#pipsi
 [conda env]: http://conda.pydata.org/docs/using/envs.html
 
+Run `tmuxpair -h` for usage details.
 
-## Usage ##
-
-See `tmuxpair -h`
-
-
-## License ##
-
-This software is available under the terms of the MIT license. See [LICENSE][]
-for details.
-
-[LICENSE]: LICENSE
