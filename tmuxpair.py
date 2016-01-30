@@ -17,7 +17,7 @@ import sshkeys
 import click
 from click import echo
 
-__version__ = '0.1.0.dev'
+__version__ = '1.0.0'
 
 
 class AuthorizedKeys(object):
