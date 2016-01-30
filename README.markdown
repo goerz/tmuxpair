@@ -27,17 +27,17 @@ Run `tmuxpair -h` for usage details.
 
 [A simple yet powerful way][1] for pair programming is to have a partner connect
 to a tmux session on your machine. However, this implies that you give them SSH
-access to your account, with the obvious security implications: Your partner now
+access, with the obvious security implications: Your partner now
 has complete control over your user account. They could use `scp` to copy any of
 your files, read your email, or [pull a prank on you][2] by messing with your
 `.bashrc`.
 
 While you should probably only engage in pair programming with people that you
 place a certain minimum amount of trust in, it would be nice to eliminate at
-least the obvious ways for your partner to to anything behind your back.
-`tmuxpair` achieves this by using key-based authentication together with the
-feature of SSH to [limit a key to a specific command][3]. This follows the
-approach outlined in [Tres Trantham’s blog post][4]. Note that we also lock down
+least the obvious ways for your partner to do anything behind your back.
+`tmuxpair` achieves this by using [key-based authentication][3] together with the
+feature of SSH to [limit a key to a specific command][4]. This follows the
+approach outlined in [Tres Trantham’s blog post][5]. Note that we also lock down
 `scp` access and port forwarding (which could allow your partner to access any
 firewalled server on your network).
 
@@ -67,5 +67,6 @@ quickly share a terminal with a colleague, *without* any further setup.
 
 [1]: https://blog.pivotal.io/pivotal-labs/labs/how-we-use-tmux-for-remote-pair-programming
 [2]: http://unix.stackexchange.com/questions/232/unix-linux-pranks
-[3]: https://en.m.wikibooks.org/wiki/OpenSSH/Client_Configuration_Files#.7E.2F.ssh.2Fauthorized_keys
-[4]: http://collectiveidea.com/blog/archives/2014/02/18/a-simple-pair-programming-setup-with-ssh-and-tmux/
+[3]: https://www.digitalocean.com/community/tutorials/how-to-configure-ssh-key-based-authentication-on-a-linux-server
+[4]: https://en.m.wikibooks.org/wiki/OpenSSH/Client_Configuration_Files#.7E.2F.ssh.2Fauthorized_keys
+[5]: http://collectiveidea.com/blog/archives/2014/02/18/a-simple-pair-programming-setup-with-ssh-and-tmux/
