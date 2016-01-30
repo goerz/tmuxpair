@@ -13,7 +13,7 @@ def get_version(filename):
 setuptools.setup(
     name="tmuxpair",
     version=get_version("tmuxpair.py"),
-    url="https://github.com/goerz/tmuxpair#tmuxpair",
+    url="https://github.com/goerz/tmuxpair#tmuxpair--reasonably-secure-pair-programming",
     author="Michael Goerz",
     author_email="goerz@stanford.edu",
     description="Command line script for setting up a temporary tmux session for pair programming",

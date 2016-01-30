@@ -2,10 +2,8 @@
 
 [![Build Status](https://travis-ci.org/goerz/tmuxpair.svg)](https://travis-ci.org/goerz/tmuxpair)
 
-(c) 2016 by Michael Goerz <<goerz@stanford.edu>>. This software is available
-under the terms of the MIT license. See [LICENSE][] for details.
-
-Command line script for setting up a temporary tmux session for pair programming
+(c) 2016 by [Michael Goerz](http://michaelgoerz.net). This software is available
+under the terms of the [MIT license][LICENSE].
 
 [LICENSE]: LICENSE
 
