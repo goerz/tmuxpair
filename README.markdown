@@ -1,19 +1,18 @@
-# tmuxpair – Reasonably Secure Pair Programming#
+# tmuxpair #
 
 [![Build Status](https://travis-ci.org/goerz/tmuxpair.svg)](https://travis-ci.org/goerz/tmuxpair)
 
-(c) 2016 by [Michael Goerz](http://michaelgoerz.net). This software is available
+© 2016 by [Michael Goerz](http://michaelgoerz.net). This software is available
 under the terms of the [MIT license][LICENSE].
 
 [LICENSE]: LICENSE
 
 ## Installation & Usage ##
 
-Install the `tmuxpair` executable with
+Using [virtualenv][]/[pipsi][]/[conda env][] is recommended. Install the
+`tmuxpair` executable with
 
     pip install tmuxpair
-
-Using [virtualenv][]/[pipsi][]/[conda env][] is recommended.
 
 [virtualenv]: http://docs.python-guide.org/en/latest/dev/virtualenvs/
 [pipsi]: https://github.com/mitsuhiko/pipsi#pipsi
@@ -21,3 +20,4 @@ Using [virtualenv][]/[pipsi][]/[conda env][] is recommended.
 
 Run `tmuxpair -h` for usage details.
 
+## Reasonably Secure Pair Programming ##
