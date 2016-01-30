@@ -1,0 +1,11 @@
+language: python
+python:
+  - "2.7"
+  - "3.3"
+  - "3.4"
+  - "3.5"
+sudo: false # use container-based infrastructure (pre-requisite for caching)
+install:
+  - pip install -e .[dev]
+script:
+  py.test --cov=tmuxpair.py --doctest-modules tmuxpair.py test_tmuxpair.py
