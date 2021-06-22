@@ -34,12 +34,14 @@ uninstall:  ## uninstall the script from the current environment
 	pip uninstall $(PROJECT_NAME)
 
 upload:  ## upload a release to PyPI
-	python setup.py register
-	python setup.py sdist upload
+	python setup.py sdist
+	twine check dist/*
+	twine upload dist/*
 
 test-upload: # upload a release to test-PyPI
-	python setup.py register -r $(TESTPYPI)
-	python setup.py sdist upload -r $(TESTPYPI)
+	python setup.py sdist
+	twine check dist/*
+	twine upload --repository-url https://test.pypi.org/legacy/ dist/*
 
 test-install: ## install the script from test-PyPI
 	pip install -i $(TESTPYPI) $(PROJECT_NAME)
