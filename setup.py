@@ -15,10 +15,14 @@ setuptools.setup(
     version=get_version("tmuxpair.py"),
     url="https://github.com/goerz/tmuxpair#tmuxpair",
     author="Michael Goerz",
-    author_email="goerz@stanford.edu",
-    description="Command line script for setting up a temporary tmux session for pair programming",
+    author_email="mail@michaelgoerz.net",
+    description=(
+        "Command line script for setting up a temporary tmux session for "
+        "pair programming"
+    ),
     install_requires=[
-        'Click>=5', 'sshkeys>=0.5',
+        'Click>=5',
+        'sshkeys>=0.5',
     ],
     extras_require={'dev': ['pytest', 'coverage', 'pytest-cov']},
     py_modules=['tmuxpair'],
@@ -34,8 +38,10 @@ setuptools.setup(
         'Programming Language :: Python :: 2',
         'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.3',
-        'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
+        'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.7',
+        'Programming Language :: Python :: 3.8',
+        'Programming Language :: Python :: 3.9',
     ],
 )

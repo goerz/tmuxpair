@@ -17,7 +17,7 @@ import sshkeys
 import click
 from click import echo
 
-__version__ = '1.0.0'
+__version__ = '1.1.0'
 
 
 class AuthorizedKeys(object):
@@ -156,11 +156,13 @@ def handle_exit(callback=None, append=False):
         help='Allow read-only access only for remote users.')
 @click.option('--tmux', default='tmux', metavar='TMUX', show_default=True,
         help='Executable to be used for tmux')
+@click.option('--allow-port-forwarding', is_flag=True, default=False,
+        help='Allow remote user to forward ports.')
 @click.option('--debug', is_flag=True,
     help='enable debug logging')
 @click.argument('keys', nargs=-1, type=click.Path(exists=True, dir_okay=False),
         required=True)
-def main(authorized_keys, keys, session, read_only, tmux, debug):
+def main(authorized_keys, keys, session, read_only, tmux, allow_port_forwarding, debug):
     """Run a new tmux session, or attach to an existing tmux session, for pair
     programming.
 
@@ -213,8 +215,9 @@ def main(authorized_keys, keys, session, read_only, tmux, debug):
             for key in keys_data:
                 key.options = OrderedDict([
                     ('command', connect_cmd),
-                    ('no-port-forwarding', True),
                     ])
+                if not allow_port_forwarding:
+                    key.options['no-port-forwarding'] = True
             authorized_data.extend(keys_data)
         authorized_data.write(authorized_keys)
         try:
